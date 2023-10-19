@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<main>
+    <p>La informacion que buscas es:</p>
+
+    <ul class="list-group">
+    <li 
+        class="list-group-item"
+        th:each="employee, iStat : ${employees}" 
+        th:style="${iStat.odd}? 'font-weight: bold;'" 
+        th:alt-title="${iStat.even}? 'even' : 'odd'">
+        <td th:text="${employee.employee_id}" />
+        <td th:text="${employee.first_name}" />
+        <td th:text="${employee.last_name}" />
+    </li>
+</ul>
+</main>
+</body>
+</html>
