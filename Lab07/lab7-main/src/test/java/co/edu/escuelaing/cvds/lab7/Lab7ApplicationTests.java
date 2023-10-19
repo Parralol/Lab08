@@ -11,7 +11,6 @@ class Lab7ApplicationTests {
 
 	@Test
 	void contextLoads() {
-	assertNull(getClass());
 	}
 
 }
