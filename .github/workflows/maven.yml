@@ -29,7 +29,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn compile
+        run: |
+          cd Lab07/lab7-main
+          mvn compile
         
   test:
     runs-on: ubuntu-latest
