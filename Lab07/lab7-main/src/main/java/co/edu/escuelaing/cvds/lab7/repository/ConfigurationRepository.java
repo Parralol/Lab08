@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ConfigurationRepository extends JpaRepository<Configuration, Long> {
-    public List<Configuration> findByPropiedad(String propiedad);
+    public List<Configuration> findByPropiedad(String employee_id);
 
 }

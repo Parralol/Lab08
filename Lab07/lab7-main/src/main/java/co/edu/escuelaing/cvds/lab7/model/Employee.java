@@ -9,8 +9,8 @@ import jakarta.persistence.Table;
 @Table(name = "EMPLOYEE")
 public class Employee {
     @Id
-    @Column(name = "EMPLOYEE_ID")
-    private String employee_id;
+    @Column(name = "EMPLOYEEID")
+    private String employeeid;
     @Column(name = "FIRST_NAME")
     private String first_name;
     @Column(name = "LAST_NAME")
@@ -31,10 +31,10 @@ public class Employee {
         
     }
     /** 
-     * @param employee_id
+     * @param employeeid
      */
-    public void setEmployee_id(String employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeid(String employeeid) {
+        this.employeeid = employeeid;
     }
 
     
@@ -61,8 +61,8 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getEmployee_id() {
-        return employee_id;
+    public String getEmployeeid() {
+        return employeeid;
     }
 
     public String getFirst_name() {
@@ -86,7 +86,7 @@ public class Employee {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((employee_id == null) ? 0 : employee_id.hashCode());
+        result = prime * result + ((employeeid == null) ? 0 : employeeid.hashCode());
         result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
         result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
         result = prime * result + ((role == null) ? 0 : role.hashCode());
@@ -103,10 +103,10 @@ public class Employee {
         if (getClass() != obj.getClass())
             return false;
         Employee other = (Employee) obj;
-        if (employee_id == null) {
-            if (other.employee_id != null)
+        if (employeeid == null) {
+            if (other.employeeid != null)
                 return false;
-        } else if (!employee_id.equals(other.employee_id))
+        } else if (!employeeid.equals(other.employeeid))
             return false;
         if (first_name == null) {
             if (other.first_name != null)
@@ -133,7 +133,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee [employee_id=" + employee_id + ", first_name=" + first_name + ", last_name=" + last_name
+        return "Employee [employeeid=" + employeeid + ", first_name=" + first_name + ", last_name=" + last_name
                 + ", role=" + role + ", salary=" + salary + "]";
     }
 

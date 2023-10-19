@@ -9,6 +9,6 @@ import co.edu.escuelaing.cvds.lab7.model.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    public List<Employee> findByPropiedad(String propiedad);
+    public List<Employee> findByEmployeeid(String employee_id);
 
 }

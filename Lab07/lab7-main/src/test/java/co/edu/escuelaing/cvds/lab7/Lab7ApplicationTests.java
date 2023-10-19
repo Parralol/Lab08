@@ -1,5 +1,8 @@
 package co.edu.escuelaing.cvds.lab7;
 
+
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -8,6 +11,7 @@ class Lab7ApplicationTests {
 
 	@Test
 	void contextLoads() {
+	assertNull(getClass());
 	}
 
 }

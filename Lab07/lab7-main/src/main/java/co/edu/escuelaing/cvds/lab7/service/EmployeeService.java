@@ -10,38 +10,38 @@ import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
-    private final EmployeeRepository EmployeeRepository;
+    private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public EmployeeService(EmployeeRepository EmployeeRepository) {
-        this.EmployeeRepository = EmployeeRepository;
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
-    public Employee addEmployee(Employee Employee) {
-        return EmployeeRepository.save(Employee);
+    public Employee addEmployee(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
-    public Employee getEmployee(String propiedad) {
-        return EmployeeRepository.findByPropiedad(propiedad).get(1);
+    public Employee getEmployee(String employee_id) {
+        return employeeRepository.findByEmployeeid(employee_id).get(1);
     }
 
     public List<Employee> getAllEmployees() {
-        return EmployeeRepository.findAll();
+        return employeeRepository.findAll();
     }
 
-    public Employee updateEmployee(Employee Employee) {
-        if (EmployeeRepository.findByPropiedad(Employee.getEmployee_id()).size() == 0) {
-            return EmployeeRepository.save(Employee);
+    public Employee updateEmployee(Employee employee) {
+        if (employeeRepository.findByEmployeeid(employee.getEmployeeid()).size() == 0) {
+            return employeeRepository.save(employee);
         }
 
         return null;
     }
 
-    public void deleteEmployee(Long propiedad) {
-        EmployeeRepository.deleteById(propiedad);
+    public void deleteEmployee(Long employee_id) {
+        employeeRepository.deleteById(employee_id);
     }
     public List<Employee> getAll(){
-        return EmployeeRepository.findAll();
+        return employeeRepository.findAll();
     }
 
 }

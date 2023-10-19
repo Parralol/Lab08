@@ -18,12 +18,4 @@ public class Lab7Application {
 		SpringApplication.run(Lab7Application.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner run() throws Exception {
-		return (args) -> {
-			Employee employee1 = new Employee();
-			
-		};
-	}
-
 }
