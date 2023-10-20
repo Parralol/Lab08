@@ -13,4 +13,20 @@ class Lab7ApplicationTests {
 	//void contextLoads() {
 	//}
 
+	@Test
+	public void CanSearchEmployeeWhenExists(){
+
+	}
+
+	@Test
+	public void ShouldReturnEmptyWithNoEmployee(){
+
+	}
+
+	@Test
+	public void ShouldRegisterEmployee(){
+
+	}
+
+	
 }
