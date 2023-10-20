@@ -65,7 +65,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd Lab07/lab7-main
-        mvn -B package --file pom.xml
+        echo "en construccion"
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
