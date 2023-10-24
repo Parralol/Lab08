@@ -4,7 +4,9 @@ package co.edu.escuelaing.cvds.lab7.service;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,6 +28,19 @@ public class EmployeeServiceTest {
     @InjectMocks
     private EmployeeService employeeService;
 
+    private Employee employee;
+
+    @BeforeEach
+    public void setup(){
+        //employeeRepository = Mockito.mock(EmployeeRepository.class);
+        //employeeService = new EmployeeServiceImpl(employeeRepository);
+        employee = Employee.builder()
+                .employeeid("1")
+                .first_name("Ramesh")
+                .last_name("Fadatare")
+                .role("ramesh@gmail.com")
+                .build();
+    }
     /**
      * Dado que tengo 1 empleado registrado
      * Cuando lo consulto a nivel de servicio
@@ -46,5 +61,23 @@ public class EmployeeServiceTest {
 
     }
     
+    /**
+     * Dado que no hay ningún empleado registrado
+     * Cuándo lo consulto a nivel de servicio
+     * Entonces la consulta no retornará ningún resultado.
+     */
+    @Test
+    void testNone() {
+        Employee mockedEmployee = new Employee("Santiago", "Parra");
+        mockedEmployee.setEmployeeid(Integer.toString(1));
+        List<Employee> mockedEmployees = new ArrayList<>();
+        mockedEmployees.add(0, mockedEmployee);
+        // given - precondition or setup
+        given(mockedEmployeeRepository.findAll())
+                .willReturn(mockedEmployees);
+        List<Employee> employees = employeeService.getAllEmployees();
+        System.out.println(employees);
+        assertThat(employees.size()).isEqualTo(0);
 
+    }
 }

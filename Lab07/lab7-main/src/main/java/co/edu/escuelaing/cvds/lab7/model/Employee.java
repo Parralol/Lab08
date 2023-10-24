@@ -1,9 +1,18 @@
 package co.edu.escuelaing.cvds.lab7.model;
 
+import lombok.*;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 
 @Entity
 @Table(name = "EMPLOYEE")
@@ -20,9 +29,6 @@ public class Employee {
     @Column(name = "SALARY")
     private Double salary;
 
-    public Employee() {
-
-    }
 
     public Employee(String first, String last){
 

@@ -29,11 +29,7 @@ public class ConfigurationService {
     }
 
     public Configuration updateConfiguration(Configuration configuration) {
-        if (configurationRepository.findByPropiedad(configuration.getPropiedad()).size() == 0) {
-            return configurationRepository.save(configuration);
-        }
-
-        return null;
+        return configurationRepository.save(configuration);
     }
 
     public void deleteConfiguration(Long propiedad) {
