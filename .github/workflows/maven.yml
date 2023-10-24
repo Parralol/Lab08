@@ -57,9 +57,7 @@ jobs:
     steps:
    
     - name: En construccion
-      run: |
-        cd Lab07/lab7-main
-        echo "en construccion"
+      run: echo "en construccion"
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
