@@ -1,10 +1,12 @@
 package co.edu.escuelaing.cvds.lab7.service;
 
 
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.BDDMockito.*;
+
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +14,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import static org.mockito.BDDMockito.given;
-import static org.assertj.core.api.Assertions.assertThat;
 
 import co.edu.escuelaing.cvds.lab7.model.Employee;
 import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
@@ -68,7 +68,28 @@ public class EmployeeServiceTest {
      */
     @Test
     void testNone() {
+        // given - precondition or setup
         Employee mockedEmployee = new Employee("Santiago", "Parra");
+        mockedEmployee.setEmployeeid(Integer.toString(1));
+        List<Employee> mockedEmployees = new ArrayList<>();
+        mockedEmployees.add(0, mockedEmployee);
+
+        //when
+        given(mockedEmployeeRepository.findByEmployeeid("3")).willReturn(Collections.emptyList());
+        //then
+        Employee employees = employeeService.getEmployee("3");
+        System.out.println(employees);
+        assertThat(employees).isEqualTo(null);
+    }
+
+    /**
+     *Dado que no hay ningún empleado registrado
+     *Cuándo lo creo a nivel de servicio
+     *Entonces la creación será exitosa.
+     */
+    @Test
+    void testNew() {
+    Employee mockedEmployee = new Employee("Santiago", "Parra");
         mockedEmployee.setEmployeeid(Integer.toString(1));
         List<Employee> mockedEmployees = new ArrayList<>();
         mockedEmployees.add(0, mockedEmployee);
@@ -77,7 +98,8 @@ public class EmployeeServiceTest {
                 .willReturn(mockedEmployees);
         List<Employee> employees = employeeService.getAllEmployees();
         System.out.println(employees);
-        assertThat(employees.size()).isEqualTo(0);
+        assertThat(employees.get(0).getEmployeeid()).isEqualTo("1");
 
     }
+
 }

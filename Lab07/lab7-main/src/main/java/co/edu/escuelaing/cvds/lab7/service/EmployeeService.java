@@ -1,7 +1,6 @@
 package co.edu.escuelaing.cvds.lab7.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,12 @@ public class EmployeeService {
     }
 
     public Employee getEmployee(String employee_id) {
+        if(employeeRepository.findByEmployeeid(employee_id).size() != 0){
             return employeeRepository.findByEmployeeid(employee_id).get(0);
+        }else{
+            return null;
+        }
+           
     }
 
     public List<Employee> getAllEmployees() {
