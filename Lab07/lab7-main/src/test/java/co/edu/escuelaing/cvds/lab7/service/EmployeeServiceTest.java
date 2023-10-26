@@ -20,7 +20,7 @@ import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
 
 
 @ExtendWith(MockitoExtension.class)
-public class EmployeeServiceTest {
+    class EmployeeServiceTest {
     
     @Mock
     private EmployeeRepository mockedEmployeeRepository;
