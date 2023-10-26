@@ -99,7 +99,36 @@ public class EmployeeServiceTest {
         List<Employee> employees = employeeService.getAllEmployees();
         System.out.println(employees);
         assertThat(employees.get(0).getEmployeeid()).isEqualTo("1");
-
     }
 
+    /**
+     *Dado que tengo 1 empleado registrado
+     *Cuándo lo elimino a nivel de servicio
+     *Entonces la eliminación será exitosa.
+     */
+    @Test
+    void testElminiation() {
+        long employeeId = 1L;
+        // given - precondition or setup
+        willDoNothing().given(mockedEmployeeRepository).deleteById(employeeId);
+        employeeService.deleteEmployee(employeeId);
+        verify(mockedEmployeeRepository, times(1)).deleteById(employeeId);
+    }
+    /**
+     *Dado que no hay ningún empleado registrado
+     *Cuándo lo creo a nivel de servicio
+     *Entonces la creación será exitosa.
+     */
+    @Test
+    void testCrearYEliminiation() {
+        Employee mockedEmployee = new Employee("Santiago", "Parra");
+        mockedEmployee.setEmployeeid(Integer.toString(1));
+        List<Employee> mockedEmployees = new ArrayList<>();
+        mockedEmployees.add(0, mockedEmployee);
+        long employeeId = 1L;
+        // given - precondition or setup
+        willDoNothing().given(mockedEmployeeRepository).deleteById(employeeId);
+        employeeService.deleteEmployee(employeeId);
+        verify(mockedEmployeeRepository, times(1)).deleteById(employeeId);
+    }
 }
