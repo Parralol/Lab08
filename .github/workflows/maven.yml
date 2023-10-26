@@ -29,8 +29,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: |
-          cd Lab07/lab7-main
+        run:
           mvn compile
         
   test:
@@ -46,8 +45,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: |
-          cd Lab07/lab7-main
+        run:
           mvn test
 
       
