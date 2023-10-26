@@ -22,9 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: | 
-              cd Lab07/lab7-main
-              mvn clean install
+        run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
