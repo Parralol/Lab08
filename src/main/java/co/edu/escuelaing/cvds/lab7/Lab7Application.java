@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import co.edu.escuelaing.cvds.lab7.service.EmployeeService;
-
+//Lab081324
 @SpringBootApplication
 public class Lab7Application {
 	@Autowired
@@ -14,5 +14,4 @@ public class Lab7Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Lab7Application.class, args);
 	}
-
 }
