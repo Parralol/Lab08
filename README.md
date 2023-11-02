@@ -33,12 +33,14 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
   
 4) Verifica que la ejecución del **workflow** es exitosa, si no lo fuera, modifícalo hasta que ocurra
 
+   ![image](https://github.com/Parralol/Lab08/assets/110953563/ef2f2203-bd48-40d5-b405-993d1b8c11a9)
 
 
 ### Desplegando en Azure usando CI/CD (Continous Deployment / Continous Delivery)
 
 5) En Azure crea un servicio de App Service con recursos que facturen 0 dólares
-   
+   ![image](https://github.com/Parralol/Lab08/assets/110953563/ec3982bb-7d40-4488-a182-2e1ca39b83e2)
+
 7) Configura el **job deploy** que creaste en el paso 2 y usando el *action* **azure/webapps-deploy@v2** despliega el *jar* generado a tu servicio de App Service
    
 9) Verifica qué el endpoint de la aplicación generado en App Service
