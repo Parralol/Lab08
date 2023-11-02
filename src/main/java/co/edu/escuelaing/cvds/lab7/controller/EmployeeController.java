@@ -28,16 +28,17 @@ public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
     @GetMapping("/")
-    public String cargarDatos() {
+    public String cargarDatos(Model model) {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
             File file = new ClassPathResource("json/employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
-            return "employ";
         }catch(Exception e){
+            model.addAttribute("error", e.getMessage());
             return "greeting";
         }
+        return "employee";
     }
      @RequestMapping(value = "/getEmployee", method = RequestMethod.POST)
     public String add(Model model, String first, String last) {
