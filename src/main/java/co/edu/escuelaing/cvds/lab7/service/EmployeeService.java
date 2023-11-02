@@ -46,7 +46,7 @@ public class EmployeeService {
         return null;
     }
 
-    public void deleteEmployee(Long employee_id) {
+    public void deleteEmployee(String employee_id) {
         employeeRepository.deleteById(employee_id);
     }
     public List<Employee> getAll(){

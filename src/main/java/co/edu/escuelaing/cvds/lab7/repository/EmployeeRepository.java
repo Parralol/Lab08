@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import co.edu.escuelaing.cvds.lab7.model.Employee;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends JpaRepository<Employee, String> {
     public List<Employee> findByEmployeeid(String employee_id);
 
 }

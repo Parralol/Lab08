@@ -3,6 +3,7 @@ package co.edu.escuelaing.cvds.lab7.service;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -108,7 +109,7 @@ import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
      */
     @Test
     void testElminiation() {
-        long employeeId = 1L;
+        String employeeId = "1L";
         // given - precondition or setup
         willDoNothing().given(mockedEmployeeRepository).deleteById(employeeId);
         employeeService.deleteEmployee(employeeId);
@@ -125,7 +126,7 @@ import co.edu.escuelaing.cvds.lab7.repository.EmployeeRepository;
         mockedEmployee.setEmployeeid(Integer.toString(1));
         List<Employee> mockedEmployees = new ArrayList<>();
         mockedEmployees.add(0, mockedEmployee);
-        long employeeId = 1L;
+        String employeeId = "1L";
         // given - precondition or setup
         willDoNothing().given(mockedEmployeeRepository).deleteById(employeeId);
         employeeService.deleteEmployee(employeeId);

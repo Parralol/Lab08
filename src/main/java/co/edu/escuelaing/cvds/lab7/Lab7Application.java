@@ -1,7 +1,5 @@
 package co.edu.escuelaing.cvds.lab7;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +13,6 @@ public class Lab7Application {
 	@Autowired
 	EmployeeService employeeService;
 
-	ArrayList<String> nombres;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Lab7Application.class, args);
@@ -28,6 +25,8 @@ public class Lab7Application {
 			//TypeReference<List<Employee>> typeReference = new TypeReference<List<Employee>>(){};
 			//InputStream inputStream = TypeReference.class.getResourceAsStream("/json/employees.json");
 			//try {
+			//GRANT ALL PRIVILEGES ON *.* TO "root1"@"%" IDENTIFIED BY "Lab081324";	
+			//GRANT ALL PRIVILEGES ON *.* TO 'root1'@'%' IDENTIFIED BY 'Lab081324' WITH GRANT OPTION;
 			//	List<Employee> users = mapper.readValue(inputStream,typeReference);
 			//	employeeService.save(users);
 			//	System.out.println("Users Saved!");

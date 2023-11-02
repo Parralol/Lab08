@@ -1,11 +1,12 @@
 package co.edu.escuelaing.cvds.lab7.service;
 
-import co.edu.escuelaing.cvds.lab7.model.Configuration;
-import co.edu.escuelaing.cvds.lab7.repository.ConfigurationRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import co.edu.escuelaing.cvds.lab7.model.Configuration;
+import co.edu.escuelaing.cvds.lab7.repository.ConfigurationRepository;
 
 @Service
 public class ConfigurationService {
@@ -32,7 +33,7 @@ public class ConfigurationService {
         return configurationRepository.save(configuration);
     }
 
-    public void deleteConfiguration(Long propiedad) {
+    public void deleteConfiguration(String propiedad) {
         configurationRepository.deleteById(propiedad);
     }
 
