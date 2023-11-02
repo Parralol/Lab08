@@ -9,7 +9,7 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
 
 1) Subir el nuevo repositorio a GitHub
    
-  ![image](https://github.com/Parralol/Lab08/assets/110953563/8ef92c2a-8fb1-442a-851c-c4f0643628c6)
+     > aqui podemos verlo
 
 2) Configurar en github actions un **workflow** que contendrá 3 **jobs**, el primer **job** se llamará **build**, el segundo **test** y el tercero **deploy**, además, este workflow se disparará (events/trigger) **on: pull_request**, para esto puede usar como base [este tutorial](https://qaautomation.expert/2023/06/26/how-to-run-springboot-tests-with-github-actions/) o cualquier otro qué considere. Deberás hacer **steps** o **actions** sobre cada **job** para que se pueda obtener los siguiente:
    
@@ -20,7 +20,6 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
 - deploy: por ahora deberá imprimir en consola "En construcción ..."
 
 
-![image](https://github.com/Parralol/Lab08/assets/110953563/0ee6e8bc-4468-4401-8a82-1169bae1b875)
 
 3) Agregar los siguientes tests
 - Dado que tengo 1 empleado registrado, Cuando lo consulto a nivel de servicio, Entonces la consulta será exitosa validando el campo id.
@@ -47,4 +46,5 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
 10) Para utilizar la base de datos, configura los datos de conexión como una o varias variables de entorno tanto en App Service como en el archivo **application.properties** de tu proyecto
     
 12) Prueba nuevamente la aplicación, ya debería estar funcionando! :fireworks: :champagne:
+
 
