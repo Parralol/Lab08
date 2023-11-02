@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,21 +27,20 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping("/upload")
-    public ResponseEntity<String> cargarDatos(Model model) {
+    @GetMapping("/index")
+    public String cargarDatos(Model model) {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
             File file = new ClassPathResource("json/employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
             System.out.print("corrio");
-            return ResponseEntity.ok("Datos cargados exitosamente en la base de datos.");
+            return "index";
         }catch(Exception e){
-                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al crear los datos.");
+            return "employee";
+
         }
-
     }
-
      @RequestMapping(value = "/getEmployee", method = RequestMethod.POST)
     public String add(Model model, String first, String last) {
         Employee employ = new Employee(first, last);
