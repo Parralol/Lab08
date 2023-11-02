@@ -1,23 +1,30 @@
 package co.edu.escuelaing.cvds.lab7.model;
 
-import lombok.*;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
+@Data
 @Entity
 @Table(name = "EMPLOYEE")
 public class Employee {
+
     @Id
+    @GeneratedValue( strategy = GenerationType.AUTO )
     @Column(name = "EMPLOYEEID")
     private String employeeid;
     @Column(name = "FIRST_NAME")
@@ -28,31 +35,33 @@ public class Employee {
     private String role;
     @Column(name = "SALARY")
     private Double salary;
+    @Column(name = "EMPRESA")
+    private String empresa;
+    @Column(name = "SEXO")
+    private char sexo;
 
-
-    public Employee(String first, String last){
+    public Employee(String first, String last) {
 
         setFirst_name(first);
         setLast_name(last);
-        
+
     }
-    /** 
+
+    /**
      * @param employeeid
      */
     public void setEmployeeid(String employeeid) {
         this.employeeid = employeeid;
     }
 
-    
-    /** 
+    /**
      * @param first_name
      */
     public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
 
-    
-    /** 
+    /**
      * @param last_name
      */
     public void setLast_name(String last_name) {
@@ -65,6 +74,14 @@ public class Employee {
 
     public void setSalary(Double salary) {
         this.salary = salary;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
     }
 
     public String getEmployeeid() {
@@ -87,7 +104,14 @@ public class Employee {
         return salary;
     }
 
- 
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public char getSexo() {
+        return sexo;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -97,6 +121,8 @@ public class Employee {
         result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
         result = prime * result + ((role == null) ? 0 : role.hashCode());
         result = prime * result + ((salary == null) ? 0 : salary.hashCode());
+        result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
+        result = prime * result + sexo;
         return result;
     }
 
@@ -134,13 +160,20 @@ public class Employee {
                 return false;
         } else if (!salary.equals(other.salary))
             return false;
+        if (empresa == null) {
+            if (other.empresa != null)
+                return false;
+        } else if (!empresa.equals(other.empresa))
+            return false;
+        if (sexo != other.sexo)
+            return false;
         return true;
     }
 
     @Override
     public String toString() {
         return "Employee [employeeid=" + employeeid + ", first_name=" + first_name + ", last_name=" + last_name
-                + ", role=" + role + ", salary=" + salary + "]";
+                + ", role=" + role + ", salary=" + salary + ", empresa=" + empresa + ", sexo=" + sexo + "]";
     }
 
 }

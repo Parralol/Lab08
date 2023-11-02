@@ -20,6 +20,10 @@ public class EmployeeService {
     public Employee addEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
+    
+    public void save(List<Employee> employee) {
+        employeeRepository.saveAll(employee);
+    }
 
     public Employee getEmployee(String employee_id) {
         if(employeeRepository.findByEmployeeid(employee_id).size() != 0){
