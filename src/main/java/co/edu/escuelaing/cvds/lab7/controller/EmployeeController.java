@@ -31,7 +31,7 @@ public class EmployeeController {
     public String cargarDatos(Model model) {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
-            File file = new ClassPathResource("employees.json").getFile();
+            File file = new ClassPathResource("https://github.com/Parralol/Lab08/blob/effa1066aee66621001682a9701ba51ec5bfa7da/src/main/resources/json/employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
         }catch(Exception e){
