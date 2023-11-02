@@ -37,8 +37,7 @@ public class EmployeeController {
             System.out.print("corrio");
             return "index";
         }catch(Exception e){
-            return "employee";
-
+            return "error";
         }
     }
      @RequestMapping(value = "/getEmployee", method = RequestMethod.POST)
