@@ -93,3 +93,7 @@ Recuerde la estructura:
 - Gastos en salario de las empresas registras en el sistema
 - Persona por sexo en la base de datos
 > Todas estas gráficas deberán ser debidamente rotuladas con su título, leyenda, etiquetas de ejes con sus unidades y tooltip sobre la serie de datos. Puede escoger entre gráficos de barras, líneas, pie, y sustente su elección.
+
+### LINK AZURE
+
+[pagina web](https://lab08santiagoparra.azurewebsites.net/)
