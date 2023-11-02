@@ -84,6 +84,8 @@ Recuerde la estructura:
 | Requiere Conexión a Internet  | No                              | No                            | No                          | Sí (para cargar la librería) |
 | Integración con Google        | No                              | No                            | No                          | Sí                          |
 
+   > Se decide usar c3.js ya que, entre este y google poseen una buena flexibilidad, baja curva de aprendizaje, buena documentacion, una amplia gama de graficos y basicamente, sobresale en todo sobre los demas, ademas de NO requerir internet   
+
 4) Realiza una página nueva en la estructura, esta página será la de "analítica" o "insights", en está página se podrá seleccionar entre las siguientes gráficas:
 - Histograma de Salario
 - Número de empleados por empresa
