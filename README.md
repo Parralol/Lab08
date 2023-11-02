@@ -19,6 +19,7 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
   
 - deploy: por ahora deberá imprimir en consola "En construcción ..."
 
+![image](https://github.com/Parralol/Lab08/assets/110953563/468e548c-095d-4f02-a26b-542aa75c808b)
 
 
 3) Agregar los siguientes tests
@@ -27,8 +28,11 @@ Usando el mismo código del proyecto 7 (generar un repositorio nuevo), para hace
 - Dado que no hay ningún empleado registrado, Cuándo lo creo a nivel de servicio, Entonces la creación será exitosa.
 - Dado que tengo 1 empleado registrado, Cuándo lo elimino a nivel de servicio, Entonces la eliminación será exitosa.
 - Dado que tengo 1 empleado registrado, Cuándo lo elimino y consulto a nivel de servicio, Entonces el resultado de la consulta no retornará ningún resultado.
+
+   > Ya se encuentran en el codigo
   
 4) Verifica que la ejecución del **workflow** es exitosa, si no lo fuera, modifícalo hasta que ocurra
+
 
 
 ### Desplegando en Azure usando CI/CD (Continous Deployment / Continous Delivery)
