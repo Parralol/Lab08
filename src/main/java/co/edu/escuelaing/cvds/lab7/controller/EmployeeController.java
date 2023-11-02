@@ -34,16 +34,16 @@ public class EmployeeController {
             File file = new ClassPathResource("json/employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
-            return "index";
+            return "employ";
         }catch(Exception e){
-            return "error";
+            return "greeting";
         }
     }
      @RequestMapping(value = "/getEmployee", method = RequestMethod.POST)
     public String add(Model model, String first, String last) {
         Employee employ = new Employee(first, last);
         employeeService.addEmployee(employ);
-        return "employee";
+        return "employ";
     }
 
 }
