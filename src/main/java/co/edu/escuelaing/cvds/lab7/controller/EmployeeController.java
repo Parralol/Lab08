@@ -31,7 +31,7 @@ public class EmployeeController {
     public String cargarDatos(Model model) {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
-            File file = new ClassPathResource("json/employees.json").getFile();
+            File file = new ClassPathResource("employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
         }catch(Exception e){
