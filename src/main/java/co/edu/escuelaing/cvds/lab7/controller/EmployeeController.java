@@ -34,7 +34,6 @@ public class EmployeeController {
             File file = new ClassPathResource("json/employees.json").getFile();
             List<Employee> employees = objectMapper.readValue(file, new TypeReference<List<Employee>>() {});
             employeeRepository.saveAll(employees);
-            System.out.print("corrio");
             return "index";
         }catch(Exception e){
             return "error";
