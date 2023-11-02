@@ -27,8 +27,8 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping("/index")
-    public String cargarDatos(Model model) {
+    @GetMapping("/")
+    public String cargarDatos() {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
             File file = new ClassPathResource("json/employees.json").getFile();
